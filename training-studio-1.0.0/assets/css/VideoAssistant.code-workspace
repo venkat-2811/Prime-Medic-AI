@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "VideoAssistant",
+			"path": "../../../../VideoAssistant (1)/VideoAssistant"
+		},
+		{
+			"name": "training-studio-1.0.0",
+			"path": "../../.."
+		}
+	],
+	"settings": {}
+}

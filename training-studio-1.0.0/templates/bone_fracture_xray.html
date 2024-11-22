@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bone Fracture Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; text-align: center; }
+        input[type="file"] { margin: 10px 0; }
+        .result { margin-top: 20px; font-size: 24px; font-weight: bold; }
+        img { max-width: 100%; max-height: 300px; margin-top: 20px; }
+        select { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bone Fracture Prediction</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required><br>
+            <select name="model" required>
+                <option value="Parts">Bone Part Prediction</option>
+                <option value="Elbow">Elbow Fracture Prediction</option>
+                <option value="Hand">Hand Fracture Prediction</option>
+                <option value="Shoulder">Shoulder Fracture Prediction</option>
+            </select><br>
+            <button type="submit">Upload X-Ray Image</button>
+        </form>
+
+        <div class="result" id="prediction-result"></div>
+        <div id="uploaded-image"></div>
+    </div>
+
+    <script>
+        // Handle form submission and display results dynamically using JavaScript
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('prediction-result').textContent = 'Prediction: ' + data.prediction;
+                document.getElementById('uploaded-image').innerHTML = '<img src="' + data.file_path + '" alt="Uploaded X-ray">';
+            })
+            .catch(error => {
+                document.getElementById('prediction-result').textContent = 'Error occurred during prediction!';
+            });
+        });
+    </script>
+</body>
+</html>

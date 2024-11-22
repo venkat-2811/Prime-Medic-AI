@@ -1,0 +1,10 @@
+jupyter
+ffmpeg-python
+python-dotenv
+shiny
+git+https://github.com/jcheng5/shinymedia
+pandas
+matplotlib
+groq
+gTTS
+pyttsx3

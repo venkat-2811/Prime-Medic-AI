@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Webcam Video Capture - PrimeMedic AI</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #ff5a5f;
+            color: white;
+            padding: 50px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        header p {
+            font-size: 20px;
+            font-weight: 300;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            animation: slideUp 1s ease-out;
+        }
+
+        video {
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        video:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            margin: 10px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            background-color: #ff5a5f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        button:hover {
+            background-color: #e53e3e;
+            transform: scale(1.05);
+        }
+
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .status-container {
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 16px;
+            color: #777;
+            opacity: 0;
+            animation: fadeIn 2.5s ease-in-out forwards;
+        }
+
+        .footer a {
+            color: #ff5a5f;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Add animation for the audio player */
+        .audio-container {
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Webcam Video Capture</h1>
+        <p>Capture and upload videos for health diagnostics with AI-powered precision</p>
+    </header>
+
+    <div class="main-container">
+        <h2>Webcam Preview</h2>
+        <video id="webcamPreview" width="640" height="480" autoplay muted></video>
+
+        <div>
+            <button id="startRecording">Start Recording</button>
+            <button id="stopRecording" disabled>Stop Recording</button>
+            <button id="uploadVideo" disabled>Upload Video</button>
+        </div>
+
+        <div class="audio-container">
+            <h2>Your Processed Audio</h2>
+            <audio id="processedAudio" controls autoplay>
+                <source id="audioSource" src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="status-container" id="status"></div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 PrimeMedic AI. All Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+
+    <!-- Include webcam capture script -->
+    <script src="../static/webcam-capture.js"></script>
+
+    <script>
+        const startRecordingButton = document.getElementById('startRecording');
+        const stopRecordingButton = document.getElementById('stopRecording');
+        const uploadVideoButton = document.getElementById('uploadVideo');
+        const audioElement = document.getElementById('processedAudio');
+        const audioSource = document.getElementById('audioSource');
+        
+        let mediaRecorder;
+        let recordedChunks = [];
+    
+        // Initialize webcam and start recording
+        startRecordingButton.addEventListener('click', () => {
+            // Access the webcam
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    const webcamPreview = document.getElementById('webcamPreview');
+                    webcamPreview.srcObject = stream;
+                    mediaRecorder = new MediaRecorder(stream);
+    
+                    mediaRecorder.ondataavailable = (event) => {
+                        recordedChunks.push(event.data);
+                    };
+    
+                    mediaRecorder.onstop = () => {
+                        const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                        const videoURL = URL.createObjectURL(blob);
+                        const videoPlayer = document.createElement('video');
+                        videoPlayer.src = videoURL;
+                        videoPlayer.controls = true;
+                        document.body.appendChild(videoPlayer);
+                    };
+    
+                    mediaRecorder.start();
+                    startRecordingButton.disabled = true;
+                    stopRecordingButton.disabled = false;
+                });
+        });
+    
+        // Stop the recording
+        stopRecordingButton.addEventListener('click', () => {
+            mediaRecorder.stop();
+            stopRecordingButton.disabled = true;
+            uploadVideoButton.disabled = false;
+        });
+    
+        // Functionality to upload the video
+        uploadVideoButton.addEventListener('click', () => {
+            alert("Video uploaded!");
+    
+            // Wait for 2 seconds before playing the audio
+            setTimeout(() => {
+                // Assuming the audio is now accessible via the static path
+                // Change this to the correct path on your server
+                const audioUrl = "/static/response_audio.mp3"; // Update this path to where the audio file is hosted
+                audioSource.src = audioUrl;
+                audioElement.load();
+                audioElement.play();
+            }, 15000); // Wait 2 seconds before playing the audio
+        });
+    </script>
+    
+
+
+</body>
+</html>

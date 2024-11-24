@@ -24,6 +24,94 @@
             right: 10px;
             z-index: 9999; /* Ensure it appears above other elements */
         }
+        body, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Section Heading Styles */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-heading h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+        .section-heading p {
+            font-size: 18px;
+            color: #555;
+        }
+        .section-heading img {
+            margin-top: 10px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        /* Popup Styles */
+        .video-popup {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            position: relative;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;  /* Adjust the width */
+            max-width: 1200px;  /* Maximum width */
+            height: 80%;  /* Adjust the height */
+            max-height: 800px;  /* Maximum height */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Button Styles */
+        .video-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .video-btn:hover {
+            background-color: #218838;
+        }
+
     </style>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -300,7 +388,6 @@
                                     <td class="day-time">Fitness Class</td>
                                     <td class="monday ts-item show" data-tsmeta="monday">10:00AM - 11:30AM</td>
                                     <td class="tuesday ts-item" data-tsmeta="tuesday">2:00PM - 3:30PM</td>
-                                    <!-- <td>William G. Stewart</td> -->
                                     <td><button class="video-btn" data-video="https://www.youtube.com/watch?v=T41mYCmtWls">Watch Video</button></td>
                                 </tr>
                                 <!-- Muscle Training -->
@@ -308,7 +395,6 @@
                                     <td class="day-time">Muscle Training</td>
                                     <td class="friday ts-item" data-tsmeta="friday">10:00AM - 11:30AM</td>
                                     <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                    <!-- <td>Paul D. Newman</td> -->
                                     <td><button class="video-btn" data-video="https://www.youtube.com/embed/example2">Watch Video</button></td>
                                 </tr>
                                 <!-- Body Building -->
@@ -316,7 +402,6 @@
                                     <td class="day-time">Body Building</td>
                                     <td class="tuesday ts-item" data-tsmeta="tuesday">10:00AM - 11:30AM</td>
                                     <td class="monday ts-item show" data-tsmeta="monday">2:00PM - 3:30PM</td>
-                                    <!-- <td>Boyd C. Harris</td> -->
                                     <td><button class="video-btn" data-video="https://www.youtube.com/embed/example3">Watch Video</button></td>
                                 </tr>
                                 <!-- Yoga Training Class -->
@@ -324,7 +409,6 @@
                                     <td class="day-time">Yoga Training Class</td>
                                     <td class="wednesday ts-item" data-tsmeta="wednesday">10:00AM - 11:30AM</td>
                                     <td class="friday ts-item" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                    <!-- <td>Hector T. Daigle</td> -->
                                     <td><button class="video-btn" data-video="https://www.youtube.com/embed/example4">Watch Video</button></td>
                                 </tr>
                                 <!-- Advanced Training -->
@@ -332,10 +416,8 @@
                                     <td class="day-time">Advanced Training</td>
                                     <td class="thursday ts-item" data-tsmeta="thursday">10:00AM - 11:30AM</td>
                                     <td class="wednesday ts-item" data-tsmeta="wednesday">2:00PM - 3:30PM</td>
-                                    <!-- <td>Bret D. Bowers</td> -->
                                     <td><button class="video-btn" data-video="https://www.youtube.com/embed/example5">Watch Video</button></td>
                                 </tr>
-                                <!-- Add more exercises here -->
                             </tbody>
                         </table>
                     </div>
@@ -352,78 +434,7 @@
         </div>
     </div>
     
-    <script>
-        // Get all video buttons
-        const videoButtons = document.querySelectorAll('.video-btn');
-        const videoPopup = document.getElementById('video-popup');
-        const videoFrame = document.getElementById('video-frame');
-        const closeBtn = document.querySelector('.close-btn');
     
-        // Show popup with video
-        videoButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const videoURL = e.target.getAttribute('data-video');
-                videoFrame.src = videoURL;
-                videoPopup.style.display = 'block';
-            });
-        });
-    
-        // Close the popup when clicking the close button
-        closeBtn.addEventListener('click', () => {
-            videoPopup.style.display = 'none';
-            videoFrame.src = ''; // Stop the video when closed
-        });
-    
-        // Close the popup if clicked outside of it
-        window.addEventListener('click', (e) => {
-            if (e.target === videoPopup) {
-                videoPopup.style.display = 'none';
-                videoFrame.src = ''; // Stop the video when closed
-            }
-        });
-    </script>
-    
-    <!-- CSS for Popup -->
-    <!-- CSS for Popup -->
-<style>
-    .video-popup {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        justify-content: center;
-        align-items: center;
-    }
-
-    .popup-content {
-        position: relative;
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        width: 80%;  /* Adjust the width */
-        max-width: 1200px;  /* Maximum width */
-        height: 80%;  /* Adjust the height */
-        max-height: 800px;  /* Maximum height */
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 30px;
-        cursor: pointer;
-    }
-
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-</style>
 
 <section class="section" id="trainers">
     <div class="container">
@@ -447,7 +458,7 @@
                         <h4>Get Health Data</h4>
                         <!-- <p>.</p> -->
                         <ul class="social-icons">
-                            <li><a href="">See now</a></li>
+                            <li><a href="http://192.168.80.68:8501/">See now</a></li>
                         </ul>
                     </div>
                 </div>
@@ -651,7 +662,13 @@
 </style>
 
 
-
+<!-- div class="col-lg-6 offset-lg-3"> -->
+                <div class="section-heading">
+                    <h2>Nearby <em>Hospitals</em></h2>
+                    <img src="assets/images/line-dec.png" alt="">
+                    <p>Know Your Nearby Hospitals From Map.</p>
+                </div>
+            </div>
 <section class="section" id="contact-us">
     <div class="container-fluid">
         <div class="row">
@@ -660,7 +677,7 @@
                 <div id="map" class="map-container">
                     <iframe 
                         src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sHyderabad,+India!" 
-                        width="100%" 
+                        width="200%" 
                         height="400px" 
                         frameborder="0" 
                         style="border:0" 
@@ -670,7 +687,7 @@
             </div>
 
             <!-- Contact Form Section -->
-            <div class="col-lg-6 col-md-6 col-xs-12">
+            <!-- <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="contact-form">
                     <div class="col-lg-8 offset-lg-2">
                         <div class="section-heading text-center">
@@ -679,12 +696,12 @@
                         </div>
                     </div>
 
-                    <!-- Optional Form or Information Section -->
+                    Optional Form or Information Section
                     <div class="contact-info text-center">
                         <p>If you need assistance, feel free to contact us or visit the nearby hospitals listed above.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -711,8 +728,8 @@
     .map-container {
         position: relative;
         overflow: hidden;
-        height: 550px; /* Set a fixed height for the map */
-        width: 100%; /* Make sure it takes full width */
+        height: 520px; /* Set a fixed height for the map */
+        width: 200%; /* Make sure it takes full width */
         border-radius: 10px;
     }
 
@@ -789,6 +806,35 @@
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/script.js"></script>
-
+    <script>
+        // Get all video buttons
+        const videoButtons = document.querySelectorAll('.video-btn');
+        const videoPopup = document.getElementById('video-popup');
+        const videoFrame = document.getElementById('video-frame');
+        const closeBtn = document.querySelector('.close-btn');
+    
+        // Show popup with video
+        videoButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const videoURL = e.target.getAttribute('data-video');
+                videoFrame.src = videoURL;
+                videoPopup.style.display = 'flex';
+            });
+        });
+    
+        // Close the popup when clicking the close button
+        closeBtn.addEventListener('click', () => {
+            videoPopup.style.display = 'none';
+            videoFrame.src = ''; // Stop the video when closed
+        });
+    
+        // Close the popup if clicked outside of it
+        window.addEventListener('click', (e) => {
+            if (e.target === videoPopup) {
+                videoPopup.style.display = 'none';
+                videoFrame.src = ''; // Stop the video when closed
+            }
+        });
+    </script>
   </body>
 </html>

@@ -14,3 +14,5 @@ User's can show their health problems & diseases and injuries to AI Cam, that he
 - **Fitness Data Integration**: Tracks health metrics from wearables.  
 - **Nearby Hospital Finder**: Quickly locates emergency healthcare facilities.  
 - **Yoga & Wellness Classes**: Promotes holistic well-being with guided sessions.  
+
+![Uploading Screenshot 2025-01-06 171228.png…]()

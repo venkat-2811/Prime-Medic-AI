@@ -18,4 +18,10 @@ flask-cors
 flask-socketio
 eventlet
 requests
+flask
+flask-cors
+werkzeug
+opencv-python
+numpy
+astrapy
 

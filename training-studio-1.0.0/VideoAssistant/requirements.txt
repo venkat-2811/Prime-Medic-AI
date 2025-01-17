@@ -13,3 +13,9 @@ flask
 flask-socketio
 eventlet
 requests
+flask
+flask-cors
+flask-socketio
+eventlet
+requests
+

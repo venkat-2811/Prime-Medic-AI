@@ -1,7 +1,7 @@
 import os
 import cv2
 import numpy as np
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify, render_template
 
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
@@ -9,9 +9,6 @@ from query import chat
 from astrapy import DataAPIClient
 
 app = Flask(__name__)
-@app.route('/training-studio-1.0.0/index.html')
-def custom_index():
-    return send_from_directory(os.path.join(app.root_path, 'training-studio-1.0.0'), 'index.html')
 
 
 CORS(app)

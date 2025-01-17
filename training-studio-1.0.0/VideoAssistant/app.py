@@ -8,6 +8,10 @@ from query import chat
 from astrapy import DataAPIClient
 
 app = Flask(__name__)
+@app.route('/training-studio-1.0.0/index.html')
+def custom_index():
+    return send_from_directory(os.path.join(app.root_path, 'training-studio-1.0.0'), 'index.html')
+
 
 CORS(app)
 

@@ -120,26 +120,6 @@
             animation: fadeIn 2s ease-in-out forwards;
         }
 
-        /* Back button styling */
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #ff5a5f;
-            color: white;
-            font-size: 16px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .back-button:hover {
-            background-color: #e53e3e;
-        }
-
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -173,9 +153,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Back Button -->
-    <a href="/training-studio-1.0.0/index.html" class="back-button">Back</a>
 
     <header>
         <h1>Webcam Video Capture</h1>
@@ -270,5 +247,8 @@
             }, 15000); // Wait 2 seconds before playing the audio
         });
     </script>
+    
+
+
 </body>
 </html>

@@ -8,3 +8,4 @@ matplotlib
 groq
 gTTS
 pyttsx3
+opencv-python

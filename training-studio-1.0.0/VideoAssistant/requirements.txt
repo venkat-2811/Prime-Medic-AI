@@ -9,3 +9,7 @@ groq
 gTTS
 pyttsx3
 opencv-python
+flask
+flask-socketio
+eventlet
+requests

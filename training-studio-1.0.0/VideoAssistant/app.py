@@ -1,7 +1,8 @@
 import os
 import cv2
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
+
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from query import chat

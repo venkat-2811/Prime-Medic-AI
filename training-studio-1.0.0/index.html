@@ -118,8 +118,7 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 autoDisplay: false,
-                includedLanguages: 'af,am,ar,as,ay,az,be,bg,bho,bn,bs,ca,ceb,ckb,co,cs,cy,da,de,doi,dsb,el,en,eo,es,et,eu,fa,fi,fr,fy,ga,gd,gl,gn,gu,ha,haw,he,hi,hmn,hr,hsb,ht,hu,hy,id,ig,is,it,ja,jv,ka,kk,km,kn,ko,ku,ky,la,lb,ln,lo,lt,lv,mg,mi,mk,ml,mn,mr,ms,mt,my,ne,nl,no,ny,om,or,pa,pl,ps,pt,qu,ro,ru,rw,sa,sd,si,sk,sl,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,ti,tk,tl,tr,tt,ug,uk,ur,uz,vi,wae,xh,yi,yo,zh,zu'
- // Add your desired languages
+                includedLanguages: 'en,hi,ta,te,bn,gu' // Add your desired languages
             }, 'google_translate_element');
         }
     </script>
@@ -152,10 +151,8 @@
                             <li class="scroll-to-section"><a href="#features">About</a></li>
                             <li class="scroll-to-section"><a href="#our-classes">X-Ray Prediction</a></li>
                             <li class="scroll-to-section"><a href="#schedule"> Health & Fitness Section</a></li>
-<!--                           <li class="scroll-to-section"><a href="#trainers-1">Order Medicines</a></li>  -->
-                            <li class="scroll-to-section"><a href="#contact-us">Nearby Hospitals</a></li>
-
-<!--                             <li class="main-button"><a href="#">Sign Up</a></li> -->
+                            <li class="scroll-to-section"><a href="#contact-us">Nearby Hospitals</a></li> 
+                            <!-- <li class="main-button"><a href="#">Sign Up</a></li> -->
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -204,7 +201,7 @@
                                 <h4>Chat Assistant</h4>
 <p>Our AI assistant helps users analyze symptoms and provides personalized health advice based on advanced algorithms.</p>
 
-                                <a href="https://primemedicai.onrender.com/chat" class="text-button">Start Chat</a>
+                                <a href="http://127.0.0.1:5000/chat" class="text-button">Start Chat</a>
                             </div>
                         </li>
                         <!-- <li class="feature-item">
@@ -268,7 +265,7 @@
                             <div class="right-content">
                                 <h4>AI Camera</h4>
                                 <p>The Camera detects the injuries, Health Problems and diseases visible and gives result, prescription, Doctor Consultance, First-Aid.</p>
-                                <a href="https://primemedicai.onrender.com/" class="text-button">open Camera</a>
+                                <a href="http://127.0.0.1:5000/" class="text-button">open Camera</a>
                             </div>
                         </li>
                     </ul>
@@ -398,28 +395,28 @@
                                     <td class="day-time">Muscle Training</td>
                                     <td class="friday ts-item" data-tsmeta="friday">10:00AM - 11:30AM</td>
                                     <td class="thursday friday ts-item" data-tsmeta="thursday" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                    <td><button class="video-btn" data-video="https://www.youtube.com/embed/example2">Watch Video</button></td>
+                                    <td><button class="video-btn" data-video="https://www.youtube.com/watch?v=SS3WT91y48I">Watch Video</button></td>
                                 </tr>
                                 <!-- Body Building -->
                                 <tr>
                                     <td class="day-time">Body Building</td>
                                     <td class="tuesday ts-item" data-tsmeta="tuesday">10:00AM - 11:30AM</td>
                                     <td class="monday ts-item show" data-tsmeta="monday">2:00PM - 3:30PM</td>
-                                    <td><button class="video-btn" data-video="https://www.youtube.com/embed/example3">Watch Video</button></td>
+                                    <td><button class="video-btn" data-video="https://www.youtube.com/watch?v=UIPvIYsjfpo">Watch Video</button></td>
                                 </tr>
                                 <!-- Yoga Training Class -->
                                 <tr>
                                     <td class="day-time">Yoga Training Class</td>
                                     <td class="wednesday ts-item" data-tsmeta="wednesday">10:00AM - 11:30AM</td>
                                     <td class="friday ts-item" data-tsmeta="friday">2:00PM - 3:30PM</td>
-                                    <td><button class="video-btn" data-video="https://www.youtube.com/embed/example4">Watch Video</button></td>
+                                    <td><button class="video-btn" data-video="https://www.youtube.com/watch?v=CM43AZaRXNw">Watch Video</button></td>
                                 </tr>
                                 <!-- Advanced Training -->
                                 <tr>
                                     <td class="day-time">Advanced Training</td>
                                     <td class="thursday ts-item" data-tsmeta="thursday">10:00AM - 11:30AM</td>
                                     <td class="wednesday ts-item" data-tsmeta="wednesday">2:00PM - 3:30PM</td>
-                                    <td><button class="video-btn" data-video="https://www.youtube.com/embed/example5">Watch Video</button></td>
+                                    <td><button class="video-btn" data-video="https://www.youtube.com/watch?v=950Hw7L7If8">Watch Video</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -672,42 +669,111 @@
                     <p>Know Your Nearby Hospitals From Map.</p>
                 </div>
             </div>
-<section class="section" id="contact-us">
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Map Section -->
-            <div class="col-lg-6 col-md-6 col-xs-12">
-                <div id="map" class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sHyderabad,+India!" 
-                        width="200%" 
-                        height="400px" 
-                        frameborder="0" 
-                        style="border:0" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Contact Form Section -->
-            <!-- <div class="col-lg-6 col-md-6 col-xs-12">
-                <div class="contact-form">
-                    <div class="col-lg-8 offset-lg-2">
-                        <div class="section-heading text-center">
-                            <h2><em>See Nearby Hospitals</em></h2>
-                            <img src="assets/images/line-dec.png" alt="decoration-line">
+            <section class="section" id="contact-us">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Map Section -->
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <div id="map" class="map-container" style="height: 500px;"></div>
                         </div>
                     </div>
-
-                    Optional Form or Information Section
-                    <div class="contact-info text-center">
-                        <p>If you need assistance, feel free to contact us or visit the nearby hospitals listed above.</p>
-                    </div>
                 </div>
-            </div> -->
-        </div>
-    </div>
-</section>
+            </section>
+            
+            <!-- Include Leaflet CSS and JS -->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            
+            <script>
+                // Initialize the map
+                const map = L.map('map').setView([0, 0], 13); // Default view before user location is fetched
+            
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+            
+                // Locate the user's position
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const userLat = position.coords.latitude;
+                            const userLon = position.coords.longitude;
+                            const userLocation = [userLat, userLon];
+            
+                            // Update the map view to the user's location
+                            map.setView(userLocation, 14);
+            
+                            // Add a marker for the user's location
+                            L.marker(userLocation).addTo(map).bindPopup("You are here").openPopup();
+            
+                            // Fetch nearby hospitals
+                            fetchHospitals(userLocation);
+                        },
+                        (error) => {
+                            console.error("Geolocation error:", error);
+                            alert("Unable to retrieve your location. Please enable location services.");
+                        }
+                    );
+                } else {
+                    alert("Geolocation is not supported by your browser.");
+                }
+            
+                // Function to fetch nearby hospitals
+                function fetchHospitals([lat, lon]) {
+                    const searchRadius = 0.1; // Adjust the radius (in degrees, approx. 10-15 km)
+                    const nominatimUrl = `https://nominatim.openstreetmap.org/search?format=json&q=hospital&limit=50&bounded=1&viewbox=${lon - searchRadius},${lat + searchRadius},${lon + searchRadius},${lat - searchRadius}`;
+            
+                    fetch(nominatimUrl)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            if (data.length === 0) {
+                                alert("No hospitals found nearby.");
+                            } else {
+                                data.forEach((place) => {
+                                    const hospitalLat = parseFloat(place.lat);
+                                    const hospitalLon = parseFloat(place.lon);
+            
+                                    // Calculate the distance to the hospital
+                                    const distance = haversineDistance([lat, lon], [hospitalLat, hospitalLon]);
+            
+                                    // Add markers for hospitals
+                                    L.marker([hospitalLat, hospitalLon])
+                                        .addTo(map)
+                                        .bindPopup(
+                                            `<b>${place.display_name}</b><br>Distance: ${distance.toFixed(2)} km`
+                                        );
+                                });
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Error fetching hospitals:", error);
+                            alert("Could not fetch hospital data.");
+                        });
+                }
+            
+                // Haversine formula to calculate the distance between two coordinates
+                function haversineDistance([lat1, lon1], [lat2, lon2]) {
+                    const R = 6371; // Radius of the Earth in km
+                    const dLat = degToRad(lat2 - lat1);
+                    const dLon = degToRad(lon2 - lon1);
+                    const a =
+                        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                        Math.cos(degToRad(lat1)) *
+                            Math.cos(degToRad(lat2)) *
+                            Math.sin(dLon / 2) *
+                            Math.sin(dLon / 2);
+                    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                    return R * c; // Distance in km
+                }
+            
+                // Helper function to convert degrees to radians
+                function degToRad(deg) {
+                    return deg * (Math.PI / 180);
+                }
+            </script>
+            
 
 <style>
     /* Section Styling */
@@ -778,7 +844,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; 2024 PrimeMedic AI
+                    <p>Copyright &copy; 2025 PrimeMedic AI
                     
 
                 Distributed by <a rel="nofollow" href="" class="tm-text-link" target="_blank">Syntax Samurai's</a>
@@ -810,34 +876,48 @@
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
-        // Get all video buttons
-        const videoButtons = document.querySelectorAll('.video-btn');
-        const videoPopup = document.getElementById('video-popup');
-        const videoFrame = document.getElementById('video-frame');
-        const closeBtn = document.querySelector('.close-btn');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all video buttons
+            const videoButtons = document.querySelectorAll('.video-btn');
+            const videoPopup = document.getElementById('video-popup');
+            const videoFrame = document.getElementById('video-frame');
+            const closeBtn = document.querySelector('.close-btn');
     
-        // Show popup with video
-        videoButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const videoURL = e.target.getAttribute('data-video');
-                videoFrame.src = videoURL;
-                videoPopup.style.display = 'flex';
+            // Function to update the video URL
+            function updateVideoURL(videoURL) {
+                // Convert YouTube watch URL to embed format if needed
+                if (videoURL.includes('watch?v=')) {
+                    videoURL = videoURL.replace('watch?v=', 'embed/');
+                }
+                videoFrame.src = `${videoURL}?autoplay=1`; // Add autoplay for better UX
+            }
+    
+            // Show popup with video
+            videoButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const videoURL = button.getAttribute('data-video');
+                    if (videoURL) {
+                        updateVideoURL(videoURL);
+                        videoPopup.style.display = 'flex';
+                    }
+                });
+            });
+    
+            // Close the popup when clicking the close button
+            closeBtn.addEventListener('click', () => {
+                videoPopup.style.display = 'none';
+                videoFrame.src = ''; // Stop the video
+            });
+    
+            // Close the popup if clicked outside the content
+            videoPopup.addEventListener('click', (e) => {
+                if (e.target === videoPopup) {
+                    videoPopup.style.display = 'none';
+                    videoFrame.src = ''; // Stop the video
+                }
             });
         });
-    
-        // Close the popup when clicking the close button
-        closeBtn.addEventListener('click', () => {
-            videoPopup.style.display = 'none';
-            videoFrame.src = ''; // Stop the video when closed
-        });
-    
-        // Close the popup if clicked outside of it
-        window.addEventListener('click', (e) => {
-            if (e.target === videoPopup) {
-                videoPopup.style.display = 'none';
-                videoFrame.src = ''; // Stop the video when closed
-            }
-        });
     </script>
+    
   </body>
 </html>

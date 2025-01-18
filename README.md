@@ -15,7 +15,13 @@ User's can show their health problems & diseases and injuries to AI Cam, that he
 - **Nearby Hospital Finder**: Quickly locates emergency healthcare facilities.  
 - **Yoga & Wellness Classes**: Promotes holistic well-being with guided sessions.  
 
-Web
+## Web
 ![Screenshot 2025-01-06 171228](https://github.com/user-attachments/assets/8208e064-ea63-4e8e-a20c-006dce369124)
 
-App
+## App
+![WhatsApp Image 2025-01-18 at 6 27 48 PM](https://github.com/user-attachments/assets/87d6200d-fdbc-4bb1-b0bb-9bae69d93808)
+
+![WhatsApp Image 2025-01-18 at 6 27 49 PM](https://github.com/user-attachments/assets/ecb93298-cd24-4d6a-8ac0-75f67628a9e2)  ![WhatsApp Image 2025-01-18 at 6 27 49 PM (1)](https://github.com/user-attachments/assets/bc35d686-df98-41ba-b45a-82761bbdc5ad)
+
+
+

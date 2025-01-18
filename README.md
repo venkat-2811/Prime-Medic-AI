@@ -21,7 +21,7 @@ User's can show their health problems & diseases and injuries to AI Cam, that he
 ## App
 ![WhatsApp Image 2025-01-18 at 6 27 48 PM](https://github.com/user-attachments/assets/fe5827f8-7dec-4025-be55-684d7691dddb)
 
-![WhatsApp Image 2025-01-18 at 6 27 49 PM](https://github.com/user-attachments/assets/840fdd54-5bfb-4cd0-be8c-838e693b9970)
+![WhatsApp Image 2025-01-18 at 6 27 49 PM (1)](https://github.com/user-attachments/assets/a8993922-8bbd-48b8-ade1-5baf5bb48667)
   ![WhatsApp Image 2025-01-18 at 6 27 49 PM (1)](https://github.com/user-attachments/assets/bc35d686-df98-41ba-b45a-82761bbdc5ad)
 
 

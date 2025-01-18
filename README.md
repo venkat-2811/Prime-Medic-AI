@@ -16,7 +16,7 @@ User's can show their health problems & diseases and injuries to AI Cam, that he
 - **Yoga & Wellness Classes**: Promotes holistic well-being with guided sessions.  
 
 ## Web
-![Screenshot 2025-01-06 171228](https://github.com/user-attachments/assets/8208e064-ea63-4e8e-a20c-006dce369124)
+![WhatsApp Image 2025-01-18 at 6 27 48 PM](https://github.com/user-attachments/assets/fe5827f8-7dec-4025-be55-684d7691dddb)
 
 ## App
 ![WhatsApp Image 2025-01-18 at 6 27 48 PM](https://github.com/user-attachments/assets/87d6200d-fdbc-4bb1-b0bb-9bae69d93808)

@@ -1,4 +1,5 @@
 ![Screenshot 2025-01-17 193729](https://github.com/user-attachments/assets/ae81ca62-6050-4f7e-b25d-d8e8413591bb)
+
 **LIVE LINK** : https://sandeepgoudmacha.github.io/prime/training-studio-1.0.0/index.html
 
 ## Inspiration
